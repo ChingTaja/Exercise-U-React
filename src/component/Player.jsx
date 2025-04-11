@@ -9,7 +9,8 @@ export default function Player({ initialName, symbol }) {
   };
 
   const handleChange = (event) => {
-    setPlayerName(event.target.value);
+    console.log(event);
+    setPlayerName(event);
   };
   return (
     <li>
