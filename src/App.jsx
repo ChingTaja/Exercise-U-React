@@ -70,16 +70,19 @@ function App() {
       winner = value_1
     }
   }
+
+  // draw
+  const hasDraw = gameTurns.length === 9 && !winner
     
   return (
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player initialName="player1" symbol="o" isActive={activePlayer === 'o'} />
-          <Player initialName="player2" symbol="x" isActive={activePlayer === 'x'} />
+          <Player initialName="player1" symbol="o" isActive={ activePlayer === 'o' } />
+          <Player initialName="player2" symbol="x" isActive={ activePlayer === 'x' } />
         </ol>
-        <GameBoard board={gameBoard} onSelectSquare={handleSelectSquare} />
-        {winner && <GameOver winner={winner} />}
+        <GameBoard board={ gameBoard } onSelectSquare={ handleSelectSquare } />
+        { (winner || hasDraw) && <GameOver winner={ winner } />}
       </div>
       <Log turns={gameTurns}/>
     </main>
