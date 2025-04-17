@@ -1,6 +1,7 @@
 import Player from './component/Player';
 import GameBoard from './component/GameBoard';
 import Log from './component/Log'
+import GameOver from './component/GameOver';
 import { useState } from 'react';
 import { WINNING_COMBINATIONS } from './winning-combination'
 
@@ -61,10 +62,9 @@ function App() {
   let winner
   for (const combination of WINNING_COMBINATIONS) {
     // if combination 陣列 裡面每一個 value 都相等 , 就贏了
-    let value_1 = gameBoard[combination[0].row][combination[0].col]
-    let value_2 = gameBoard[combination[1].row][combination[1].col]
-    let value_3 = gameBoard[combination[2].row][combination[2].col]
-
+    let value_1 = gameBoard[combination[0].row][combination[0].column]
+    let value_2 = gameBoard[combination[1].row][combination[1].column]
+    let value_3 = gameBoard[combination[2].row][combination[2].column]
     // 防止 null
     if (value_1 && value_2 === value_3 && value_1 === value_2) {
       winner = value_1
@@ -79,8 +79,8 @@ function App() {
           <Player initialName="player2" symbol="x" isActive={activePlayer === 'x'} />
         </ol>
         <GameBoard board={gameBoard} onSelectSquare={handleSelectSquare} />
+        {winner && <GameOver winner={winner} />}
       </div>
-      <p>You won ~~~ { winner }</p>
       <Log turns={gameTurns}/>
     </main>
   );
