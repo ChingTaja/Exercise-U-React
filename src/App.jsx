@@ -4,18 +4,25 @@ import Log from './component/Log'
 import { useState } from 'react';
 
 function App() {
-  const [activePlayer, setActivePlayer] = useState('x');
   const [gameTurns, setGameTurns] = useState([]);
 
-  const handleSelectSquare = (rowIndex, colIndex) => {
-    setActivePlayer((player) => (player === 'x' ? 'o' : 'x'));
-
-    setGameTurns((preTurns) => {
+  const derivePlayer = (preTurns) => {
       let currentPlayer = 'x'
       // preTurns[0] 最新一筆
-      if (preTurns.length >0 && preTurns[0].player === 'x') {
+      if (preTurns.length > 0 && preTurns[0].player === 'x') {
         currentPlayer = 'o'
       }
+    
+    return currentPlayer
+  }
+
+
+  const activePlayer = derivePlayer(gameTurns)
+
+  const handleSelectSquare = (rowIndex, colIndex) => {
+    setGameTurns((preTurns) => {
+
+      let currentPlayer = derivePlayer(preTurns)
 
       const updatedTurns = [
         {
@@ -43,7 +50,7 @@ function App() {
         </ol>
         <GameBoard turns={gameTurns} onSelectSquare={handleSelectSquare} activePlayerSymbol={activePlayer} />
       </div>
-      <Log/>
+      <Log turns={gameTurns}/>
     </main>
   );
 }
