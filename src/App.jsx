@@ -21,8 +21,6 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-let gameBoard = initialGameBoard
-
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
 
@@ -39,7 +37,7 @@ function App() {
             row: rowIndex,
             col: colIndex
           },
-          // 避免使用其他 state 當做(ex: activePlayer) 其他 state 的變數｀
+          // 避免使用其他 state 當做其他 state 的變數｀
           player: currentPlayer,
         }
 
@@ -51,6 +49,8 @@ function App() {
     })
   };
 
+  // let gameBoard = initialGameBoard ❌
+  let gameBoard = [...initialGameBoard.map(array => [...array])]
   for (const turn of gameTurns) {
     const { square, player } = turn
     const { row, col } = square
@@ -73,6 +73,11 @@ function App() {
 
   // draw
   const hasDraw = gameTurns.length === 9 && !winner
+
+  function handleRestart() {
+    // App function內 的程式碼重新執行時, gameBoard 要從 initialGameBoard copy 新的物件 , 而非採用 `gameBoard = initialGameBoard` , 這會導致不符合 "Immutability"
+    setGameTurns([])
+  }
     
   return (
     <main>
@@ -82,7 +87,7 @@ function App() {
           <Player initialName="player2" symbol="x" isActive={ activePlayer === 'x' } />
         </ol>
         <GameBoard board={ gameBoard } onSelectSquare={ handleSelectSquare } />
-        { (winner || hasDraw) && <GameOver winner={ winner } />}
+        { (winner || hasDraw) && <GameOver winner={ winner } onRestart={ handleRestart } />}
       </div>
       <Log turns={gameTurns}/>
     </main>
