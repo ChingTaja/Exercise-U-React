@@ -1,7 +1,7 @@
-import Player from './component/Player';
-import GameBoard from './component/GameBoard';
-import Log from './component/Log'
-import GameOver from './component/GameOver';
+import Player from './component/ticTacToe/Player';
+import GameBoard from './component/ticTacToe/GameBoard';
+import Log from './component/ticTacToe/Log'
+import GameOver from './component/ticTacToe/GameOver';
 import { useState } from 'react';
 import { WINNING_COMBINATIONS } from './winning-combination'
 
