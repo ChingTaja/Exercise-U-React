@@ -109,9 +109,9 @@ export default function Home() {
   return (
     <main>
       <header>
-      <img src="game-logo.png" alt="game picture" />
-      <h1>Tic-Tac-Toe</h1>
-    </header>
+        <img src="game-logo.png" alt="game picture" />
+        <h1>Tic-Tac-Toe</h1>
+      </header>
       <SideBar />
       <div id="game-container">
         <ol id="players" className="highlight-player">
