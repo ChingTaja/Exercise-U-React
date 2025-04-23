@@ -12,6 +12,8 @@ export default function Investment() {
     duration: 2,
   });
 
+  const isInputValid = userInput.duration >= 1;
+
   const handleChange = (inputIdentifier, newValue) => {
     setUserInput((preInput) => {
       return {
@@ -25,7 +27,8 @@ export default function Investment() {
     <>
       <Header />
       <UserInput input={userInput} onChange={handleChange} />
-      <Result input={userInput} />
+      {isInputValid && <Result input={userInput} />}
+      {!isInputValid && <p className="center">the duration must greater than zero</p>}
     </>
   );
 }
