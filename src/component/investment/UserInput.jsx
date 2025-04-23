@@ -1,7 +1,5 @@
-import { useState } from 'react';
-
 export default function UserInput({ input, onChange }) {
-  console.log('userInput', input);
+  console.log(input);
   return (
     <section id="user-input">
       <div className="input-group">
