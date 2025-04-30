@@ -1,5 +1,3 @@
-import '../../css/cssTutorial.css';
-
 import AuthInputs from './AuthInputs';
 import Header from './Header.jsx';
 
