@@ -1,7 +1,13 @@
 import { calculateInvestmentResults, formatter } from '../../../util/investment';
 
 export default function Result({ input }) {
-  const resultData = calculateInvestmentResults(input);
+  // 若 resultData 放在 function Result 導致每次重新 render Result 時又 push 舊的資料到 resultData 上
+  let resultData = [];
+  calculateInvestmentResults(input, resultData);
+
+  if (resultData.length === 0) {
+    return <p className="center">Invalid input data provided</p>;
+  }
   const initialInvestment = resultData[0].valueEndOfYear - resultData[0].interest - resultData[0].annualInvestment;
 
   return (
