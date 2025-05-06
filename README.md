@@ -2,7 +2,7 @@ Course: https://www.udemy.com/course/react-tutorial-and-projects-course/?couponC
 
 Learning Map:
 
-1. JSX
+1. JSX , Declarative Programming 
 2. component
 3. props
 4. children props
@@ -20,6 +20,7 @@ Learning Map:
 16. tailwind
 17. strict mode
 18. Refs and portal
+19. different between refs and state
 
 project1 tic tac toe
 project2 investment
