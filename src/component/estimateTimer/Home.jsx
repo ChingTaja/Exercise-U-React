@@ -1,4 +1,5 @@
 import Player from './Player';
+import TimeChallenge from './TimeChallenge';
 
 export default function Home() {
   return (
@@ -12,7 +13,12 @@ export default function Home() {
         </header>
 
         <Player />
-        <div id="challenges"></div>
+        <div id="challenges">
+          <TimeChallenge title="Easy" targetTime={1} />
+          <TimeChallenge title="Not easy" targetTime={5} />
+          <TimeChallenge title="Getting tough" targetTime={10} />
+          <TimeChallenge title="Pros only" targetTime={15} />
+        </div>
       </div>
     </>
   );
