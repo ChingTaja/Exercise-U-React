@@ -6,10 +6,12 @@ export default function TimeChallenge({ title, targetTime }) {
   const [timerExpired, setTimerExpired] = useState(false);
 
   const timer = useRef();
+  const dialog = useRef();
 
   const handleStart = () => {
     timer.current = setTimeout(() => {
       setTimerExpired(true);
+      dialog.current.open()
     }, 1000 * targetTime);
 
     setTimerStarted(true);
@@ -21,7 +23,7 @@ export default function TimeChallenge({ title, targetTime }) {
 
   return (
     <>
-      {timerExpired && <ResultModel targetTime={targetTime} result="lost" />}
+      <ResultModel ref={dialog} targetTime={targetTime} result="lost" />
       <section className="challenge">
         <h2>{title}</h2>
         <p className="challenge-time">
