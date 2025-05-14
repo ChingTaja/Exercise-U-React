@@ -21,6 +21,7 @@ Learning Map:
 17. strict mode
 18. Refs and portal
 19. different between refs and state
+20. useImperativeHandle
 
 project1 tic tac toe
 project2 investment
