@@ -1,6 +1,6 @@
 import { useImperativeHandle, useRef } from 'react';
 
-export default function ResultModel({ ref, result, targetTime }) {
+export default function ResultModel({ ref, result, targetTime, remaining }) {
   const dialog = useRef();
   useImperativeHandle(ref, () => {
     return {
@@ -17,7 +17,7 @@ export default function ResultModel({ ref, result, targetTime }) {
         The target time was <strong>{targetTime} seconds.</strong>
       </p>
       <p>
-        You stopped the time with <strong>X seconds left.</strong>
+        You stopped the time with <strong>{remaining} seconds left.</strong>
       </p>
       <form method="dialog">
         <button>close</button>
