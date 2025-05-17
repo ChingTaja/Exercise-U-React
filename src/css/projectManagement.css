@@ -1,1 +1,6 @@
 @tailwind utilities;
+
+body {
+  background-color: #e8e8e3;
+  margin: 0;
+}
