@@ -24,6 +24,7 @@ Learning Map:
 20. useImperativeHandle
 21. creatPortal (react-dom)
 
-project1 tic tac toe
-project2 investment
-project3 css training
+project 1 tic tac toe
+project 2 investment
+project 3 css training
+project 4 projectManagement
