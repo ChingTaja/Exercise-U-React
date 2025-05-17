@@ -19,9 +19,10 @@ Learning Map:
 15. css module
 16. tailwind
 17. strict mode
-18. Refs and portal
+18. Refs and Portal
 19. different between refs and state
 20. useImperativeHandle
+21. creatPortal (react-dom)
 
 project1 tic tac toe
 project2 investment
