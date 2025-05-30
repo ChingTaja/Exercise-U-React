@@ -23,6 +23,7 @@ Learning Map:
 19. different between refs and state
 20. useImperativeHandle
 21. creatPortal (react-dom)
+22. props drilling happen!
 
 project 1 tic tac toe
 project 2 investment
