@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function NewTask({ onAdd, onDelete }) {
+export default function NewTask({ onAdd }) {
   const [enteredTask, setEnteredTask] = useState('');
 
   const handleChange = (event) => {
@@ -8,6 +8,7 @@ export default function NewTask({ onAdd, onDelete }) {
   };
 
   const handleClick = () => {
+    if (enteredTask.trim() === '') return;
     onAdd(enteredTask);
     setEnteredTask('');
   };
