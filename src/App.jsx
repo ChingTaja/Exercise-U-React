@@ -1,5 +1,7 @@
 // import './css/estimateTimer.css';
-import './css/projectManagement.css';
+// import './css/projectManagement.css';
+import './css/shoppingCart.css';
+
 // import TicTacToe from './component/ticTacToe/Home'
 // import Investment from './component/investment/Home'
 // import CssTutorial from './component/cssTutorial/Home';

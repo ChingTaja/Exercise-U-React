@@ -24,6 +24,10 @@ Learning Map:
 20. useImperativeHandle
 21. creatPortal (react-dom)
 22. props drilling happen!
+23. Context API
+        - useContext
+        - use
+
 
 project 1 tic tac toe
 project 2 investment
