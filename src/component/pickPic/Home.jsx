@@ -1,15 +1,25 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import Places from './Places.jsx';
 import { AVAILABLE_PLACES } from './data.js';
 import Modal from './Modal.jsx';
 import DeleteConfirmation from './DeleteConfirmation.jsx';
 import logoImg from '../../assets/picPic/logo.png';
+import { sortPlacesByDistance } from './loc.js';
 
 function PickPicture() {
   const modal = useRef();
   const selectedPlace = useRef();
+  const [availablePlaces, setAvailablePlaces] = useState([]);
   const [pickedPlaces, setPickedPlaces] = useState([]);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const sortedPlaces = sortPlacesByDistance(AVAILABLE_PLACES, position.coords.latitude, position.coords.longitude);
+
+      setAvailablePlaces(sortedPlaces);
+    });
+  }, []);
 
   function handleStartRemovePlace(id) {
     modal.current.open();
@@ -53,7 +63,12 @@ function PickPicture() {
           places={pickedPlaces}
           onSelectPlace={handleStartRemovePlace}
         />
-        <Places title="Available Places" places={AVAILABLE_PLACES} onSelectPlace={handleSelectPlace} />
+        <Places
+          title="Available Places"
+          places={availablePlaces}
+          onSelectPlace={handleSelectPlace}
+          fallbackText="Sorting places by distance..."
+        />
       </main>
     </>
   );
