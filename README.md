@@ -28,7 +28,7 @@ Learning Map:
         - useContext
         - use
 24. useReducer
-
+25. Handle Side Effects & useEffect()
 
 project 1 tic tac toe
 project 2 investment
