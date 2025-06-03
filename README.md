@@ -27,6 +27,7 @@ Learning Map:
 23. Context API
         - useContext
         - use
+24. useReducer
 
 
 project 1 tic tac toe
