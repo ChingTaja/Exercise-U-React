@@ -29,8 +29,11 @@ Learning Map:
         - use
 24. useReducer
 25. Handle Side Effects & useEffect()
+26. useCallback
 
 project 1 tic tac toe
 project 2 investment
 project 3 css training
 project 4 projectManagement
+project 5 pick picture 
+project 6 quiz
