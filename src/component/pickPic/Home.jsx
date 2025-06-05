@@ -7,11 +7,14 @@ import DeleteConfirmation from './DeleteConfirmation.jsx';
 import logoImg from '../../assets/picPic/logo.png';
 import { sortPlacesByDistance } from './loc.js';
 
+const storedIds = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+const storePlaces = storedIds.map((id) => AVAILABLE_PLACES.find((place) => place.id === id));
+
 function PickPicture() {
-  const modal = useRef();
   const selectedPlace = useRef();
   const [availablePlaces, setAvailablePlaces] = useState([]);
-  const [pickedPlaces, setPickedPlaces] = useState([]);
+  const [pickedPlaces, setPickedPlaces] = useState(storePlaces);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -22,12 +25,12 @@ function PickPicture() {
   }, []);
 
   function handleStartRemovePlace(id) {
-    modal.current.open();
     selectedPlace.current = id;
+    setModalIsOpen(true);
   }
 
   function handleStopRemovePlace() {
-    modal.current.close();
+    setModalIsOpen(false);
   }
 
   function handleSelectPlace(id) {
@@ -36,18 +39,28 @@ function PickPicture() {
         return prevPickedPlaces;
       }
       const place = AVAILABLE_PLACES.find((place) => place.id === id);
+
       return [place, ...prevPickedPlaces];
     });
+
+    const storedIds = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+    if (storedIds.indexOf(id) === -1) {
+      localStorage.setItem('selectedPlaces', JSON.stringify([id, ...storedIds]));
+    }
   }
 
   function handleRemovePlace() {
     setPickedPlaces((prevPickedPlaces) => prevPickedPlaces.filter((place) => place.id !== selectedPlace.current));
-    modal.current.close();
+
+    const storedIds = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
+    localStorage.setItem('selectedPlaces', JSON.stringify(storedIds.filter((id) => selectedPlace.current !== id)));
+
+    setModalIsOpen(false);
   }
 
   return (
     <>
-      <Modal ref={modal}>
+      <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
         <DeleteConfirmation onCancel={handleStopRemovePlace} onConfirm={handleRemovePlace} />
       </Modal>
 
