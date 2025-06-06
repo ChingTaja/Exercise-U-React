@@ -11,10 +11,10 @@ import './css/quiz.css';
 // import ProjectManagement from './component/projectManagement/Home';
 // import ShoppingCart from './component/shoppingCart/Home';
 // import PickPicture from './component/pickPic/Home';
-import Quiz from './component/quiz/Home';
+import QuizHome from './component/quiz/Home';
 
 function App() {
-  return <Quiz />;
+  return <QuizHome />;
 }
 
 export default App;
