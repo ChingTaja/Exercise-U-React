@@ -19,9 +19,9 @@ export default function QuestionTimer({ timeout, onTimeout }) {
     }, 100);
 
     return () => {
-      clearTimeout(timer);
+      clearInterval(timer);
     };
   }, []);
 
-  return <progress id="quetion-time" max={timeout} value={remainingTime}></progress>;
+  return <progress id="question-time" max={timeout} value={remainingTime}></progress>;
 }
