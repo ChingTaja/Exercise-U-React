@@ -33,11 +33,18 @@ Learning Map:
 27. how react update the DOM (tree)
 28. memo
 29. useMemo
+30. Class base component
 
 project 1 tic tac toe
+
 project 2 investment
+
 project 3 css training
+
 project 4 projectManagement
+
 project 5 pick picture 
+
 project 6 quiz
+
 project 7 counter
