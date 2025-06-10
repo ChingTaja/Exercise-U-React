@@ -48,3 +48,4 @@ project 5 pick picture
 project 6 quiz
 
 project 7 counter
+.
