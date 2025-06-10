@@ -30,6 +30,8 @@ Learning Map:
 24. useReducer
 25. Handle Side Effects & useEffect()
 26. useCallback
+27. how react update the DOM (tree)
+28. memo
 
 project 1 tic tac toe
 project 2 investment
