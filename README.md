@@ -32,6 +32,7 @@ Learning Map:
 26. useCallback
 27. how react update the DOM (tree)
 28. memo
+29. useMemo
 
 project 1 tic tac toe
 project 2 investment

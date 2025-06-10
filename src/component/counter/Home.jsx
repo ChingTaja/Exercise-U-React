@@ -9,9 +9,10 @@ function CounterHome() {
   log('<App /> rendered');
 
   const [chosenCount, setChosenCount] = useState(0);
-  
+
   function handleSetCount(newCount) {
     setChosenCount(newCount);
+    console.log(chosenCount);
   }
 
   return (
@@ -19,7 +20,7 @@ function CounterHome() {
       <Header />
       <main>
         <ConfigureCounter onSet={handleSetCount} />
-        <Counter initialCount={chosenCount} />
+        <Counter key={chosenCount} initialCount={chosenCount} />
       </main>
     </>
   );
