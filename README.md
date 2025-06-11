@@ -2,7 +2,7 @@ Course: https://www.udemy.com/course/react-tutorial-and-projects-course/?couponC
 
 Learning Map:
 
-1. JSX , Declarative Programming 
+1. JSX , Declarative Programming
 2. component
 3. props
 4. children props
@@ -34,7 +34,7 @@ Learning Map:
 28. memo
 29. useMemo
 30. Class base component (pending ...)
-31. send http request (backend dummy data) 
+31. send http request (backend dummy data)
 
 project 1 tic tac toe
 
@@ -44,8 +44,10 @@ project 3 css training
 
 project 4 projectManagement
 
-project 5 pick picture 
+project 5 pick picture
 
 project 6 quiz
 
 project 7 counter
+
+project 8 pick picture (backend version)
