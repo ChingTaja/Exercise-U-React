@@ -33,7 +33,8 @@ Learning Map:
 27. how react update the DOM (tree)
 28. memo
 29. useMemo
-30. Class base component
+30. Class base component (pending ...)
+31. send http request (backend dummy data) 
 
 project 1 tic tac toe
 
@@ -48,4 +49,3 @@ project 5 pick picture
 project 6 quiz
 
 project 7 counter
-.
