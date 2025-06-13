@@ -10,11 +10,11 @@ export async function fetchAvailablePlaces() {
 }
 
 export async function updateUserPlaces(places) {
-  const response = fetch('http://localhost:3000/user-places', {
+  const response = await fetch('http://localhost:3000/user-places', {
     method: 'PUT',
-    bosy: JSON.stringify(places),
+    body: JSON.stringify({ places }),
     headers: {
-      'Contemt-type': application/json
+      'Content-Type': 'application/json'
     }
   })
 

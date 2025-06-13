@@ -5,6 +5,7 @@ import Modal from './components/Modal.jsx';
 import DeleteConfirmation from './components/DeleteConfirmation.jsx';
 import logoImg from '../../assets/picPic/logo.png';
 import AvailablePlaces from './components/AvailablePlaces.jsx';
+import Error from './components/Error.jsx';
 import { updateUserPlaces } from './http.js';
 
 function PickPictureVersion() {
@@ -13,6 +14,8 @@ function PickPictureVersion() {
   const [userPlaces, setUserPlaces] = useState([]);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const [errorUpdatingPlaces, setErrorUpdatingPlaces] = useState();
 
   function handleStartRemovePlace(place) {
     setModalIsOpen(true);
@@ -36,8 +39,10 @@ function PickPictureVersion() {
 
     try {
       await updateUserPlaces([selectedPlace, ...userPlaces]);
-    } catch (e) {
-      //...
+    } catch (error) {
+      console.log('errorr', error);
+      setUserPlaces(userPlaces); // rollback old state
+      setErrorUpdatingPlaces({ message: error.message || 'Failed to update places' });
     }
   }
 
@@ -47,8 +52,16 @@ function PickPictureVersion() {
     setModalIsOpen(false);
   }, []);
 
+  const handleError = () => {
+    setErrorUpdatingPlaces(null);
+  };
   return (
     <>
+      <Modal open={errorUpdatingPlaces} onClose={handleError}>
+        {errorUpdatingPlaces && (
+          <Error title="An error occured!" message={errorUpdatingPlaces.message} onConfirm={handleError} />
+        )}
+      </Modal>
       <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
         <DeleteConfirmation onCancel={handleStopRemovePlace} onConfirm={handleRemovePlace} />
       </Modal>
