@@ -35,6 +35,7 @@ Learning Map:
 29. useMemo
 30. Class base component (pending ...)
 31. send http request (backend dummy data)
+32. custom hook
 
 project 1 tic tac toe
 
