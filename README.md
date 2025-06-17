@@ -36,6 +36,7 @@ Learning Map:
 30. Class base component (pending ...)
 31. send http request (backend dummy data)
 32. custom hook
+33. Redux
 
 project 1 tic tac toe
 
