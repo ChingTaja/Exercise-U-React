@@ -4,7 +4,8 @@
 // import './css/pickPic.css';
 // import './css/quiz.css';
 // import './css/counter.css';
-import './css/pickPictureVersion.css';
+// import './css/pickPictureVersion.css';
+import './css/counterRedux.css';
 
 // import TicTacToe from './component/ticTacToe/Home'
 // import Investment from './component/investment/Home'
@@ -15,10 +16,11 @@ import './css/pickPictureVersion.css';
 // import PickPicture from './component/pickPic/Home';
 // import QuizHome from './component/quiz/Home';
 // import Counter from './component/counter/Home';
-import PickPictureVersion from './component/pickPicServerVersion/Home';
+// import PickPictureVersion from './component/pickPicServerVersion/Home';
+import Counter from './component/counter-redux/Counter';
 
 function App() {
-  return <PickPictureVersion />;
+  return <Counter />;
 }
 
 export default App;
