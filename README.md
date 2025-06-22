@@ -55,3 +55,7 @@ project 6 quiz
 project 7 counter
 
 project 8 pick picture (backend version)
+
+project 9 counter / authZ (redux , redux toolkit)
+
+project 10 cart (redux)

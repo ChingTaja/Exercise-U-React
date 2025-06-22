@@ -5,7 +5,8 @@
 // import './css/quiz.css';
 // import './css/counter.css';
 // import './css/pickPictureVersion.css';
-import './css/counterRedux.css';
+// import './css/counterRedux.css';
+import './css/cart-redux.css';
 
 // import TicTacToe from './component/ticTacToe/Home'
 // import Investment from './component/investment/Home'
@@ -17,10 +18,11 @@ import './css/counterRedux.css';
 // import QuizHome from './component/quiz/Home';
 // import Counter from './component/counter/Home';
 // import PickPictureVersion from './component/pickPicServerVersion/Home';
-import CounterRedux from './component/counter-redux/Home';
+// import CounterRedux from './component/counter-redux/Home';
+import CartRedux from './component/cart-redux/Home';
 
 function App() {
-  return <CounterRedux />;
+  return <CartRedux />;
 }
 
 export default App;
