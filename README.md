@@ -24,9 +24,9 @@ Learning Map:
 20. useImperativeHandle
 21. creatPortal (react-dom)
 22. props drilling happen!
-23. Context API
-        - useContext
-        - use
+23. Context API 
+    - useContext 
+    - use
 24. useReducer
 25. Handle Side Effects & useEffect()
 26. useCallback
