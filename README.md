@@ -37,6 +37,8 @@ Learning Map:
 31. send http request (backend dummy data)
 32. custom hook
 33. Redux
+34. toolkit
+35. useSelector , useDispatch , configureStore
 
 project 1 tic tac toe
 
