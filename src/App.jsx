@@ -17,10 +17,10 @@ import './css/counterRedux.css';
 // import QuizHome from './component/quiz/Home';
 // import Counter from './component/counter/Home';
 // import PickPictureVersion from './component/pickPicServerVersion/Home';
-import Counter from './component/counter-redux/Counter';
+import CounterRedux from './component/counter-redux/Home';
 
 function App() {
-  return <Counter />;
+  return <CounterRedux />;
 }
 
 export default App;
