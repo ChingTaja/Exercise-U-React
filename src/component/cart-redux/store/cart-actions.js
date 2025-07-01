@@ -14,7 +14,7 @@ export const sendCartData = (cart) => {
     const sendRequest = async () => {
       const response = await fetch('https://react-adcf7-default-rtdb.firebaseio.com/cart.json', {
         method: 'PUT',
-        body: JSON.stringify(cart),
+        body: JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity }),
       });
 
       if (!response.ok) {
@@ -49,7 +49,7 @@ export const fetchCartData = () => {
       const response = await fetch('https://react-adcf7-default-rtdb.firebaseio.com/cart.json');
 
       if (!response.ok) {
-        throw new Error('Counld not fetch cart data ');
+        throw new Error('Could not fetch cart data ');
       }
 
       const data = await response.json();
@@ -59,7 +59,12 @@ export const fetchCartData = () => {
 
     try {
       const cartData = await fetchData();
-      dispatch(cartActions.replaceCart(cartData));
+      dispatch(
+        cartActions.replaceCart({
+          items: cartData.items || [],
+          totalQuantity: cartData.totalQuantity || 0,
+        })
+      );
     } catch (err) {
       dispatch(
         uiActions.showNotification({
